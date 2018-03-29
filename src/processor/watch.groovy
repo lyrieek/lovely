@@ -1,6 +1,9 @@
+import pers.th.lovely.service.MouseService
+
 import java.awt.MouseInfo
 
 def lastPoint = MouseInfo.getPointerInfo().getLocation()
+def ms = new MouseService()
 
 while (true) {
     def point = MouseInfo.getPointerInfo().getLocation()
@@ -8,8 +11,10 @@ while (true) {
         sleep 500
         continue
     }
-    print Math.round(point.getX()) + ","
-    println Math.round(point.getY())
+    int x = (int) Math.round(point.getX())
+    int y = (int) Math.round(point.getY())
+    println "=${x},${y}"
+    println "!"+ms.color(x,y).code()
     lastPoint = point
     sleep 500
 }

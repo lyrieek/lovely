@@ -1,5 +1,7 @@
 package pers.th.lovely.service;
 
+import pers.th.lovely.dto.Color;
+
 import java.awt.*;
 import java.awt.event.InputEvent;
 
@@ -8,8 +10,16 @@ import java.awt.event.InputEvent;
  */
 public class MouseService extends RobotService {
 
+    public Point current(){
+        return MouseInfo.getPointerInfo().getLocation();
+    }
+
     public void move(int x, int y) {
         robot.mouseMove(x, y);
+    }
+
+    public Color color(int x, int y) {
+        return Color.convert(robot.getPixelColor(x, y));
     }
 
     public void leftClick() {
