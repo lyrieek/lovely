@@ -25,7 +25,10 @@ public class Color extends java.awt.Color {
     }
 
     public static Color currentPointColor() {
-        Point point = MouseInfo.getPointerInfo().getLocation();
+        return getPixelColor(MouseInfo.getPointerInfo().getLocation());
+    }
+
+    public static Color getPixelColor(Point point) {
         return convert(RobotService.robot().getPixelColor((int) point.getX(), (int) point.getY()));
     }
 
