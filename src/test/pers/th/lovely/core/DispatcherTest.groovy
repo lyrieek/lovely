@@ -1,7 +1,16 @@
 package pers.th.lovely.core
 
-import pers.th.lovely.service.MouseService
+def dispatcher = new Dispatcher(this.class)
 
-def dispatcher = new Dispatcher(MouseService.class)
+println dispatcher.method("output")
+println dispatcher.method("output",1024)
 
-println dispatcher.method("leftClick")
+def output(){
+    println 1
+    "end"
+}
+
+def output(Integer param){
+    println param
+    param
+}
