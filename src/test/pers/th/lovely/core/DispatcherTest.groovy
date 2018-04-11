@@ -4,9 +4,9 @@ def dispatcher = new Dispatcher(this.class)
 
 println dispatcher.method("output")
 println dispatcher.method("output",1024)
-println dispatcher.method("output",Integer.class,new Integer(1024))
+println dispatcher.method("output",new Integer(1024))
 
-def output(){
+def output(){ 
     println 1
     "end"
 }

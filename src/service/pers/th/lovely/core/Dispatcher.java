@@ -45,14 +45,4 @@ public class Dispatcher {
         return null;
     }
 
-    public Object method(String name, Class[] parameterTypes, Object... args) {
-        try {
-            return classes.getMethod(name, parameterTypes).invoke(target, args);
-        } catch (Exception e) {
-            System.err.println("instance error:" + classes);
-            e.printStackTrace();
-        }
-        return null;
-    }
-
 }
