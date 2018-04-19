@@ -13,6 +13,7 @@ public class Dispatcher {
         try {
             target = classes.newInstance();
         } catch (Exception e) {
+            target = classes.getClass();
             System.err.println("instance error:" + classes);
             e.printStackTrace();
         }
@@ -41,6 +42,7 @@ public class Dispatcher {
         } catch (Exception e) {
             System.err.println("instance error:" + classes);
             e.printStackTrace();
+
         }
         return null;
     }
