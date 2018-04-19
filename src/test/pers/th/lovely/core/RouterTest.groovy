@@ -1,5 +1,4 @@
-import pers.th.lovely.core.Dispatcher
-import pers.th.lovely.core.Router
+package pers.th.lovely.core
 
 def router = new Router()
 
