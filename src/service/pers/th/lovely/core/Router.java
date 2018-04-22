@@ -19,4 +19,12 @@ public class Router {
         return mapping.get(key);
     }
 
+    public int size(){
+        return mapping.size();
+    }
+    
+    public void clear(){
+        mapping.clear();
+    }
+
 }
