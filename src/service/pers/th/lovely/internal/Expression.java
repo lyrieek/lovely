@@ -72,7 +72,7 @@ public class Expression {
 //        System.out.println("line = [" + (int) line.charAt(0) + "]");
     }
 
-    public void sleep(long time) {
+    public static void sleep(long time) {
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {
@@ -80,13 +80,13 @@ public class Expression {
         }
     }
 
-    public int parseNumber(String context, int index) {
+    public static int parseNumber(String context, int index) {
         Matcher matcher = NUMBER_PATTERN.matcher(context);
         for (; matcher.find() && index > 0; index--) ;
         return Integer.parseInt(context.substring(matcher.start(), matcher.end()));
     }
 
-    public int[] convert(String[] list) {
+    public static int[] convert(String[] list) {
         int[] result = new int[list.length];
         for (int i = 0; i < list.length; i++) {
             result[i] = Integer.parseInt(list[i]);
