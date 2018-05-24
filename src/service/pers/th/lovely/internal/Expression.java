@@ -25,7 +25,7 @@ public class Expression {
         }
         line = line.substring(1);
         if (first == '=') {
-            mouseService.move(parseNumber(line, 0), parseNumber(line, 1));
+            mouseService.move(parseInt(line), parseInt(line, 1));
             System.out.println("move point:" + mouseService.current());
             return;
         }
@@ -64,7 +64,7 @@ public class Expression {
             return;
         }
         if (first == ',') {
-            sleep(parseNumber(line, 0));
+            sleep(parseInt(line));
         }
         if (first == '_') {
             System.out.println("color:" + Color.currentPointColor().code());
@@ -80,9 +80,24 @@ public class Expression {
         }
     }
 
-    public static int parseNumber(String context, int index) {
+    /**
+     * 拿到字符中的第一个正整数
+     */
+    public static int parseInt(String context) {
+        return parseInt(context, 0);
+    }
+
+    /**
+     * 拿到context中的第index个字符(index从0开始)
+     * @return 得到的正整数,(匹配不到得到-1)
+     */
+    public static int parseInt(String context, int index) {
         Matcher matcher = NUMBER_PATTERN.matcher(context);
-        for (; matcher.find() && index > 0; index--) ;
+        boolean findFlag;
+        for (; (findFlag = matcher.find()) && index > 0; index--) ;
+        if (!findFlag) {
+            return -1;
+        }
         return Integer.parseInt(context.substring(matcher.start(), matcher.end()));
     }
 
