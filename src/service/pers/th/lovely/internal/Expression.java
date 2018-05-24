@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Tianhao on 2018-03-26.
+ * 表达式
  */
 public class Expression {
 
@@ -69,7 +69,6 @@ public class Expression {
         if (first == '_') {
             System.out.println("color:" + Color.currentPointColor().code());
         }
-//        System.out.println("line = [" + (int) line.charAt(0) + "]");
     }
 
     public static void sleep(long time) {
