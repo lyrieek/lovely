@@ -8,3 +8,6 @@ A quick-action programming language for the Java platform
 
 + Multithreading
 
+## Getting Started
+
+run src/processor/main.groovy
