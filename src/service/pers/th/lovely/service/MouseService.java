@@ -10,13 +10,17 @@ import java.awt.event.InputEvent;
  */
 public class MouseService extends RobotService {
 
-    public Point current(){
+    public Point current() {
         return MouseInfo.getPointerInfo().getLocation();
     }
 
     public void move(int x, int y) {
-        robot.mouseMove(x, y);
+        robot.mouseMove((int)Math.ceil((double)x * 2d), y);
     }
+
+//    public void move(int x, int y) {
+//        robot.mouseMove(x, y);
+//    }
 
     public Color color(int x, int y) {
         return Color.convert(robot.getPixelColor(x, y));

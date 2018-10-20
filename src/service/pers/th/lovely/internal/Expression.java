@@ -3,6 +3,7 @@ package pers.th.lovely.internal;
 import pers.th.lovely.dto.Color;
 import pers.th.lovely.service.MouseService;
 
+import java.sql.SQLOutput;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,6 +15,7 @@ public class Expression {
     private MouseService mouseService = new MouseService();
 
     private final static Pattern NUMBER_PATTERN = Pattern.compile("[0-9]+");
+    private final static boolean printRemark = true;
 
     public void analysis(String line) {
         if (line == null || line.isEmpty() || line.startsWith(" ")) {
@@ -21,6 +23,9 @@ public class Expression {
         }
         char first = line.charAt(0);
         if (first == '#') {
+            if (printRemark) {
+                System.out.println(line);
+            }
             return;
         }
         line = line.substring(1);
