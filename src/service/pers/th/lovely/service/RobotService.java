@@ -14,7 +14,7 @@ public class RobotService {
     static {
         try {
             robot = new Robot();
-            robot.setAutoDelay(150);
+//            robot.setAutoDelay(150);
         } catch (AWTException e) {
             e.printStackTrace();
         }

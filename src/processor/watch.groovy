@@ -13,8 +13,8 @@ while (true) {
     }
     int x = (int) Math.round(point.getX())
     int y = (int) Math.round(point.getY())
-    println "=${x},${y}"
-    println "!"+ms.color(x,y).code()
+    println "get(${x},${y})"
+//    println "!"+ms.color(x,y).code()
     lastPoint = point
-    sleep 500
+    sleep 1700
 }

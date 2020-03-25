@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 /**
  * 表达式
  */
-public class Expression {
+class Expression {
 
     private MouseService mouseService = new MouseService();
 
